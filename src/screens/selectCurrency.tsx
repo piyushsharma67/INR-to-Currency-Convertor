@@ -44,6 +44,7 @@ const screen2=({navigation}:OnboardingProps)=>{
             data={state.currencyList}
             keyExtractor={(item:any,index:number)=>index+""}
             numColumns={4}
+            showsVerticalScrollIndicator={false}
             // horizontal
             renderItem={({item})=>{
                
