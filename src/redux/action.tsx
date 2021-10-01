@@ -12,18 +12,19 @@ interface SetCurrencyArray {
 
 interface SetSelectedCurrency {
     type: ACTION_TYPES.SET_SELECTED_CURRENCY,
-    payload: string
+    payload: string[]
 }
 
 interface SetFinalCurrency {
     type: ACTION_TYPES.SET_FINAL_CURRENCY,
-    payload: number
+    payload: any
 }
-
 interface SetLoaded {
     type: ACTION_TYPES.SET_LOADED_FALSE,
 }
 
+interface SetSelectedCurrenciesNil {
+    type: ACTION_TYPES.SET_SELECTED_CURRENCIES_NIL,
+}
 
-
-export type Action = SetInitialValueAction | SetCurrencyArray | SetSelectedCurrency | SetFinalCurrency | SetLoaded
+export type Action = SetInitialValueAction | SetCurrencyArray | SetSelectedCurrency | SetFinalCurrency | SetLoaded | SetSelectedCurrenciesNil

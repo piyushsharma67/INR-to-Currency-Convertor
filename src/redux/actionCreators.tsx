@@ -5,7 +5,7 @@ import React from 'react'
 import { Alert } from "react-native"
 
 export const setInitialValue = (amount: number) => {
-    console.log(amount)
+    
     return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: ACTION_TYPES.SET_INITIAL_CURRENCY_VALUE,
@@ -15,7 +15,7 @@ export const setInitialValue = (amount: number) => {
 }
 
 export const setCurrencyArray = (amount: string[]) => {
-    console.log(amount)
+   
     return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: ACTION_TYPES.SET_CURRENCY_ARRAY,
@@ -49,7 +49,7 @@ export const fetchCurrency=()=>{
 
 }
 
-export const setSelectedCurrency = (currency: string) => {
+export const setSelectedCurrency = (currency: string[]) => {
     
     return (dispatch: Dispatch<Action>) => {
         dispatch({
@@ -61,26 +61,28 @@ export const setSelectedCurrency = (currency: string) => {
 
 interface objectmodel{
     initial:string,
-    final:string,
+    final:string[],
     value:number
 }
 
 export const fetchCurrencyValue=(prop:objectmodel)=>{
-    console.log(prop.initial,prop.final)
-    console.log("in fetch value")
+   
     return (dispatch:Dispatch<Action>)=>{
-        return fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${prop.initial}/${prop.final}.json`,{
+        for(let i=0;i<prop.final.length;i++){
+            
+            fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${prop.initial}/${prop.final[i]}.json`,{
             method:'get',
             headers:new Headers({'X-Custom-Header': 'foobar', "Content-Type": "application/json"}),
             })
             .then((response) => 
             response.json())
             .then((json)=>{
-                var result = json[prop.final]
-              
+                let key=prop.final[i].toUpperCase()
+               
+             let val={[key]:(json[prop.final[i]]*prop.value).toFixed(2)}
                 dispatch({
                     type: ACTION_TYPES.SET_FINAL_CURRENCY,
-                    payload: result*prop.value
+                    payload: val
                 })
             })
             .catch((err) => {
@@ -89,6 +91,7 @@ export const fetchCurrencyValue=(prop:objectmodel)=>{
                 }
             }
         );
+        }
     } 
 
 }
@@ -98,6 +101,15 @@ export const setLoaderFalse = () => {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: ACTION_TYPES.SET_LOADED_FALSE,
+        })
+    }
+}
+
+export const setSelectedCurrenciesListNil = () => {
+    
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ACTION_TYPES.SET_SELECTED_CURRENCIES_NIL,
         })
     }
 }

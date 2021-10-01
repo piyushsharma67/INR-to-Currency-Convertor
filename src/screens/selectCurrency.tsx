@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import { useFocusEffect } from '@react-navigation/core'
+import React, { useEffect, useState } from 'react'
 import {
     View,
     Text,
     FlatList,
     Dimensions,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Alert
 } from 'react-native'
 import { useDispatch,useSelector } from 'react-redux'
-import { fetchCurrency,setSelectedCurrency } from '../redux/actionCreators'
+import { fetchCurrency,setSelectedCurrency,setSelectedCurrenciesListNil } from '../redux/actionCreators'
 import {RootState} from '../redux/index'
 const {width}=Dimensions.get("window")
 
@@ -19,33 +21,53 @@ interface OnboardingProps {
 const screen2=({navigation}:OnboardingProps)=>{
 
     const dispatch=useDispatch()
-    useEffect(()=>{
-        dispatch(fetchCurrency())
-    },[])
+    // useEffect(()=>{
+    //     dispatch(fetchCurrency())
+    // },[])
 
+    useFocusEffect(
+        React.useCallback(()=>{
+            
+            dispatch(setSelectedCurrenciesListNil())
+            dispatch(fetchCurrency())
+        },[])
+    )
+
+    const [currencies,setCurrencies]=useState<string[]>([])
     const state=useSelector((state:RootState)=>state.reducer)
-    console.log(state)
+
 
     return (
         <View style={{justifyContent:'center',alignItems:'center',width:width,flex:1}}> 
-            <Text>Select the currency</Text>
+            <Text style={{marginVertical:20,fontSize:19}}>Select the Currency</Text>
             <FlatList 
             data={state.currencyList}
             keyExtractor={(item:any,index:number)=>index+""}
             numColumns={4}
             // horizontal
             renderItem={({item})=>{
-                console.log("items",item)
+               
                 return (
                     <TouchableOpacity style={style.container} onPress={()=>{
-                        dispatch(setSelectedCurrency(item))
-                        navigation.navigate("CONVERTED VALUE")
+                        currencies.push(item)
                     }}>
-                        <Text style={{color:'black',fontSize:16}}>{item.toUpperCase()}</Text>
+                        <Text style={{color:'white',fontSize:16,fontWeight:'bold'}}>{item.toUpperCase()}</Text>
                     </TouchableOpacity>
                 )
             }}
             />
+            <TouchableOpacity style={style.button} onPress={()=>{
+               if(currencies.length>=3){
+                dispatch(setSelectedCurrency(currencies))
+                setCurrencies([])
+                navigation.navigate("CONVERTED VALUE")
+               }else{
+                   Alert.alert("enter 3 or more currencies")
+               }
+            }
+            }>
+                <Text style={{color:'white'}}>Submitt</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -59,7 +81,14 @@ const style=StyleSheet.create({
         alignSelf:'center',
         marginHorizontal:10,
         marginVertical:5,
-        backgroundColor:'yellow'
+        backgroundColor:'blue'
+    },
+    button:{
+        backgroundColor:'purple',
+        width:80,
+        height:40,
+        justifyContent:'center',
+        alignItems:'center',marginVertical:20
     }
 })
 

@@ -34,6 +34,7 @@ function HomeScreen({navigation}: OnboardingProps) {
         </View>
         <TouchableOpacity style={style.button} onPress={()=>{
           dispatch(setInitialValue(parseInt(val,10)))
+          setVal("")
           navigation.navigate("CURRENCY LIST")
         }}>
           <Text style={{color:'white',fontWeight:'bold',fontSize:15}}>Submitt</Text>

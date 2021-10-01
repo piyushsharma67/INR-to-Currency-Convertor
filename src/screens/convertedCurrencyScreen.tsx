@@ -18,7 +18,7 @@ const screen3=()=>{
 
     const dispatch=useDispatch()
     const state=useSelector((state:RootState)=>state.reducer)
-
+   
     useFocusEffect(
         React.useCallback(()=>{
             dispatch(setLoaderFalse())
@@ -26,20 +26,27 @@ const screen3=()=>{
            
         },[])
     )
-    
-        if(!state.isLoaded){
-            return (
-                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-                    <ActivityIndicator size="large" color="green"/>
-                </View>
-            )
-        }
 
     return (
-        <View style={{justifyContent:'center',alignItems:'center',width:width,flex:1,flexDirection:'row'}}> 
-            <Text style={style.text}>{state.finalCurrency.toUpperCase()}</Text>
-            <Text style={style.text}>:</Text>
-            <Text style={style.text}>{state.finalValue} {state.currency.toUpperCase()}</Text>
+        <View style={{justifyContent:'center',alignItems:'center',width:width,flex:1}}> 
+            <Text style={{fontSize:18,flex:0.2,justifyContent:'center',alignItems:'center'}}>INR value to selected currency are:</Text>
+            <View style={{flex:0.8}}>
+                <FlatList 
+                data={state.finalValue}
+                keyExtractor={(item,index)=>index+""}
+                renderItem={({item})=>{
+                    
+                    let key=Object.keys(item)
+                    let val=Object.values(item)
+                        return (
+                            <View style={{flexDirection:'row',marginVertical:10}}>
+                                <Text style={{fontSize:18,color:"blue",}}>{key}    :</Text>
+                                <Text style={{fontSize:18,color:"blue"}}>{val} INR</Text>
+                            </View>
+                        )
+                }}
+                />
+            </View>
         </View>
     )
 }
