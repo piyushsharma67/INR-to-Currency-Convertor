@@ -1,0 +1,9 @@
+com/currencyconvertor/BuildConfig.java
+ com.currencyconvertor.BuildConfig
+com/currencyconvertor/MainApplication.java
+ com.currencyconvertor.MainApplication
+ com.currencyconvertor.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/currencyconvertor/MainActivity.java
+ com.currencyconvertor.MainActivity

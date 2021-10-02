@@ -1,0 +1,14 @@
+com/currencyconvertor/BuildConfig.java
+ com.currencyconvertor.BuildConfig
+com/currencyconvertor/MainApplication.java
+ com.currencyconvertor.MainApplication
+ com.currencyconvertor.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/currencyconvertor/MainActivity.java
+ com.currencyconvertor.MainActivity
+com/currencyconvertor/ReactNativeFlipper.java
+ com.currencyconvertor.ReactNativeFlipper
+ com.currencyconvertor.ReactNativeFlipper$1
+ com.currencyconvertor.ReactNativeFlipper$2
+ com.currencyconvertor.ReactNativeFlipper$2$1

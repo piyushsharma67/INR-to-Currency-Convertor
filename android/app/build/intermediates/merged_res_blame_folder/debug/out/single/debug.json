@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_rupay_foreground1.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xxxhdpi/rupay_foreground1.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_rupay_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xxxhdpi/rupay_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_rupay_foreground1.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xhdpi/rupay_foreground1.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_rupay_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-hdpi/rupay_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_rupay_foreground1.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-hdpi/rupay_foreground1.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_rupay_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-mdpi/rupay_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_rupay_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xhdpi/rupay_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_rupay_foreground1.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xxhdpi/rupay_foreground1.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_rupay_round.xml.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-anydpi-v26/rupay_round.xml"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_rupay_foreground1.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-mdpi/rupay_foreground1.png"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_rupay.xml.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-anydpi-v26/rupay.xml"
+    },
+    {
+        "merged": "/home/pika/kumiLabs/currencyConvertor/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_rupay_foreground.png.flat",
+        "source": "/home/pika/kumiLabs/currencyConvertor/android/app/src/main/res/mipmap-xxhdpi/rupay_foreground.png"
+    }
+]
