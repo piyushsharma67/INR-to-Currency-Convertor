@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {StyleSheet, Text,TextInput,View,Dimensions,TouchableOpacity} from 'react-native'
+import {StyleSheet, Text,TextInput,View,Dimensions,TouchableOpacity, Alert} from 'react-native'
 import { useDispatch,useSelector } from 'react-redux'
 const {width,height}=Dimensions.get("window")
 import { setInitialValue } from '../redux/actionCreators'
@@ -33,9 +33,14 @@ function HomeScreen({navigation}: OnboardingProps) {
           </View>
         </View>
         <TouchableOpacity style={style.button} onPress={()=>{
-          dispatch(setInitialValue(parseInt(val,10)))
-          setVal("")
-          navigation.navigate("CURRENCY LIST")
+          if (val==""){
+            Alert.alert("Error","Enter the value")
+          }
+          else{
+            dispatch(setInitialValue(parseInt(val,10)))
+            setVal("")
+            navigation.navigate("CURRENCY LIST")
+          }
         }}>
           <Text style={{color:'white',fontWeight:'bold',fontSize:15}}>Submitt</Text>
         </TouchableOpacity>
