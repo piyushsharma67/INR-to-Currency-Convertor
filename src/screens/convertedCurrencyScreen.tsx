@@ -41,7 +41,7 @@ const screen3=()=>{
                         return (
                             <View style={{flexDirection:'row',marginVertical:10}}>
                                 <Text style={{fontSize:18,color:"blue",}}>{key}    : </Text>
-                                <Text style={{fontSize:18,color:"blue"}}>{val} INR</Text>
+                                <Text style={{fontSize:18,color:"blue"}}>{val}</Text>
                             </View>
                         )
                 }}
