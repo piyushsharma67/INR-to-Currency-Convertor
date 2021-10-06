@@ -7,7 +7,9 @@ interface state {
     currencyList:string[],
     finalCurrency:string[],
     finalValue:any[],
-    isLoaded:Boolean
+    isLoaded:Boolean,
+    initialValueSet:Boolean,
+    setIsCurrencySelected:Boolean
 }
 
 const initialState : state= {
@@ -16,19 +18,21 @@ const initialState : state= {
     currencyList:[],
     finalCurrency:[],
     finalValue:[] ,
-    isLoaded:false
+    isLoaded:false,
+    initialValueSet:false,
+    setIsCurrencySelected:false
 };
 
 const Reducer = (state: state = initialState, action: Action) => {
     switch (action.type){
         case ACTION_TYPES.SET_INITIAL_CURRENCY_VALUE:
-            return {...state,value:action.payload}
+            return {...state,value:action.payload,initialValueSet:true}
 
         case ACTION_TYPES.SET_CURRENCY_ARRAY:
             return {...state,currencyList:action.payload}
         
         case ACTION_TYPES.SET_SELECTED_CURRENCY:
-            return {...state,finalCurrency:action.payload}
+            return {...state,finalCurrency:action.payload,setIsCurrencySelected:true}
 
         case ACTION_TYPES.SET_FINAL_CURRENCY:
             return {...state,finalValue:[...state.finalValue,action.payload],isLoaded:true}
@@ -38,6 +42,9 @@ const Reducer = (state: state = initialState, action: Action) => {
 
         case ACTION_TYPES.SET_SELECTED_CURRENCIES_NIL:
             return {...state,currencyList:[],finalValue:[]}
+        
+        case ACTION_TYPES.SET_DEFAULT:
+            return {...initialState}
             
         default:
             return state

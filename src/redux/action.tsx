@@ -27,4 +27,8 @@ interface SetSelectedCurrenciesNil {
     type: ACTION_TYPES.SET_SELECTED_CURRENCIES_NIL,
 }
 
-export type Action = SetInitialValueAction | SetCurrencyArray | SetSelectedCurrency | SetFinalCurrency | SetLoaded | SetSelectedCurrenciesNil
+interface SetDefault {
+    type: ACTION_TYPES.SET_DEFAULT
+}
+
+export type Action = SetInitialValueAction | SetCurrencyArray | SetSelectedCurrency | SetFinalCurrency | SetLoaded | SetSelectedCurrenciesNil | SetDefault

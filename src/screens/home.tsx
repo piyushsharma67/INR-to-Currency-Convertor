@@ -11,12 +11,25 @@ interface OnboardingProps {
 }
 
 function HomeScreen({navigation}: OnboardingProps) {
+
+  function checkEmpty(){
+    if (val==""){
+      Alert.alert("Error","Enter the value")
+    }
+    else{
+      dispatch(setInitialValue(parseInt(val,10)))
+      setVal("")
+      // navigation.navigate("CURRENCY LIST")
+    }
+  }
+  
   
   const [val,setVal]=useState<string>("")
   const dispatch=useDispatch()
-
-  
   const state=useSelector((state:RootState)=>state.reducer)
+
+  console.log(state.initialValueSet)
+
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' ,flexDirection:'column'}}>
         <View style={{alignItems: 'center', justifyContent: 'center' ,flexDirection:'row',borderWidth:1,padding:10}}>
@@ -32,16 +45,7 @@ function HomeScreen({navigation}: OnboardingProps) {
             <Text style={{fontSize:20,fontWeight:'bold',}}>INR</Text>
           </View>
         </View>
-        <TouchableOpacity style={style.button} onPress={()=>{
-          if (val==""){
-            Alert.alert("Error","Enter the value")
-          }
-          else{
-            dispatch(setInitialValue(parseInt(val,10)))
-            setVal("")
-            navigation.navigate("CURRENCY LIST")
-          }
-        }}>
+        <TouchableOpacity style={style.button} onPress={()=>checkEmpty()}>
           <Text style={{color:'white',fontWeight:'bold',fontSize:15}}>Submitt</Text>
         </TouchableOpacity>
       </View>

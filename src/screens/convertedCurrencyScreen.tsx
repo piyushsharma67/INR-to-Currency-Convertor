@@ -5,12 +5,11 @@ import {
     Text,
     FlatList,
     Dimensions,
-    TouchableOpacity,
     StyleSheet,
-    ActivityIndicator
 } from 'react-native'
+import { BackHandler } from 'react-native'
 import { useDispatch,useSelector } from 'react-redux'
-import {fetchCurrencyValue,setLoaderFalse} from '../redux/actionCreators'
+import {fetchCurrencyValue,setLoaderFalse,setDefault} from '../redux/actionCreators'
 import {RootState} from '../redux/index'
 const {width}=Dimensions.get("window")
 
@@ -23,7 +22,13 @@ const screen3=()=>{
         React.useCallback(()=>{
             dispatch(setLoaderFalse())
             dispatch(fetchCurrencyValue({initial:state.currency,final:state.finalCurrency,value:state.value}))
-           
+
+            const onBackPress = () : any => {
+                dispatch(setDefault())
+            };
+            BackHandler.addEventListener('hardwareBackPress', onBackPress);
+            return () =>
+                BackHandler.removeEventListener('hardwareBackPress', onBackPress);
         },[])
     )
 

@@ -21,10 +21,6 @@ interface OnboardingProps {
 const screen2=({navigation}:OnboardingProps)=>{
 
     const dispatch=useDispatch()
-    // useEffect(()=>{
-    //     dispatch(fetchCurrency())
-    // },[])
-
     useFocusEffect(
         React.useCallback(()=>{
             
@@ -32,6 +28,18 @@ const screen2=({navigation}:OnboardingProps)=>{
             dispatch(fetchCurrency())
         },[])
     )
+
+    function checkIfMinimumItemsSelected(){
+      
+        if(currencies.length>=3){
+            dispatch(setSelectedCurrency(currencies))
+            setCurrencies([])
+            // navigation.navigate("CONVERTED VALUE")
+        }else{
+            Alert.alert("enter 3 or more currencies")
+        }
+         
+    }
 
     const [currencies,setCurrencies]=useState<string[]>([])
     const state=useSelector((state:RootState)=>state.reducer)
@@ -57,16 +65,7 @@ const screen2=({navigation}:OnboardingProps)=>{
                 )
             }}
             />
-            <TouchableOpacity style={style.button} onPress={()=>{
-               if(currencies.length>=3){
-                dispatch(setSelectedCurrency(currencies))
-                setCurrencies([])
-                navigation.navigate("CONVERTED VALUE")
-               }else{
-                   Alert.alert("enter 3 or more currencies")
-               }
-            }
-            }>
+            <TouchableOpacity style={style.button} onPress={()=>checkIfMinimumItemsSelected()}>
                 <Text style={{color:'white'}}>Submitt</Text>
             </TouchableOpacity>
         </View>

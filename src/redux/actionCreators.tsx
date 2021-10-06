@@ -114,5 +114,14 @@ export const setSelectedCurrenciesListNil = () => {
     }
 }
 
+export const setDefault= () => {
+    
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ACTION_TYPES.SET_DEFAULT,
+        })
+    }
+}
+
 
 
