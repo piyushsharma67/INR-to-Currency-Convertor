@@ -42,7 +42,7 @@ const screen2=({navigation}:OnboardingProps)=>{
     }
 
     const [currencies,setCurrencies]=useState<string[]>([])
-    const state=useSelector((state:RootState)=>state.reducer)
+    const state=useSelector((state:RootState)=>state.Reducer)
 
 
     return (
@@ -57,11 +57,12 @@ const screen2=({navigation}:OnboardingProps)=>{
             renderItem={({item})=>{
                
                 return (
-                    <TouchableOpacity style={style.container} onPress={()=>{
+                    <TouchableOpacity style={[style.container,currencies.includes(item)? {backgroundColor:'yellow'} : {backgroundColor:'purple'}]} onPress={()=>{
                         currencies.push(item)
+                        console.log(currencies)
                     }}>
-                        <Text style={{color:'white',fontSize:16,fontWeight:'bold'}}>{item.toUpperCase()}</Text>
-                    </TouchableOpacity>
+                        {item!=undefined ? <Text style={{color:'white',fontSize:16,fontWeight:'bold'}}>{item.toUpperCase()}</Text> : <Text>Fetching Data</Text>}
+                </TouchableOpacity>
                 )
             }}
             />
@@ -81,7 +82,7 @@ const style=StyleSheet.create({
         alignSelf:'center',
         marginHorizontal:10,
         marginVertical:5,
-        backgroundColor:'blue'
+        // backgroundColor:'purple'
     },
     button:{
         backgroundColor:'purple',

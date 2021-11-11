@@ -8,8 +8,8 @@ import Screen3 from '../screens/convertedCurrencyScreen';
 const Stack=createNativeStackNavigator()
 
 const Navigation=()=>{
-    const state=useSelector((state:RootState)=>state.reducer)
-
+    const state=useSelector((state:RootState)=>state.Reducer)
+   
     return (
        <Stack.Navigator>
            {(state.initialValueSet==false && state.setIsCurrencySelected==false) && <Stack.Screen name="INR TO CURRENCIES CONVERTOR" component={HomeScreen} />}

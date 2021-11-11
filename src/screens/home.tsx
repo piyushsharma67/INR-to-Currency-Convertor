@@ -12,12 +12,15 @@ interface OnboardingProps {
 
 function HomeScreen({navigation}: OnboardingProps) {
 
+  const dispatch=useDispatch()
+
   function checkEmpty(){
     if (val==""){
       Alert.alert("Error","Enter the value")
     }
     else{
       dispatch(setInitialValue(parseInt(val,10)))
+     
       setVal("")
       // navigation.navigate("CURRENCY LIST")
     }
@@ -25,10 +28,8 @@ function HomeScreen({navigation}: OnboardingProps) {
   
   
   const [val,setVal]=useState<string>("")
-  const dispatch=useDispatch()
-  const state=useSelector((state:RootState)=>state.reducer)
-
-  console.log(state.initialValueSet)
+ 
+  const state=useSelector((state:RootState)=>state.Reducer)
 
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' ,flexDirection:'column'}}>
